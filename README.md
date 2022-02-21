@@ -30,3 +30,16 @@ Date ended: TBD
 
 ---
 ## 👉 Smart Contract Lottery
+
+
+## 👉 Chainlink Mix
+
+## 👉 ERC20s, EIPs, and Token Standards
+
+## 👉 DeFi & Aave
+
+## 👉 NFTs
+
+## 👉 Updrading Smart Contracts
+
+## 👉 Full-Stack DeFi
