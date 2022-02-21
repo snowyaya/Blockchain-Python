@@ -2,7 +2,7 @@
 
 
 
-### Fund Me
+### -[ ] Fund Me
 #### Dependencies, Deploying, and Networks
 - Contract verification
 - Deploy to Rinkeby
@@ -17,6 +17,6 @@
 - default networks
 - pytest.skip
 - brownie exceptions
-- brownie ganache vs local ganache vs mainnet-fork vs testnet <br />
+- brownie ganache vs local ganache vs mainnet-fork vs testnet
 
 ### Smart Contract Lottery
