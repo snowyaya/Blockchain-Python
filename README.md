@@ -31,6 +31,7 @@ Date ended: TBD
 ---
 ## 👉 Smart Contract Lottery
 
+Anyone can enter the lottery and a random winner is selcted.
 
 ## 👉 Chainlink Mix
 
