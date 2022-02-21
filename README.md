@@ -11,7 +11,7 @@ Date started: Feb 14, 2022
 Date ended: TBD
 
 ---
-### Fund Me
+## Fund Me
 #### Dependencies, Deploying, and Networks
 - Contract verification
 - Deploy to Rinkeby
@@ -29,4 +29,4 @@ Date ended: TBD
 - brownie ganache vs local ganache vs mainnet-fork vs testnet
 
 ---
-### Smart Contract Lottery
+## Smart Contract Lottery
