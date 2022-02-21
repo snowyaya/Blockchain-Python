@@ -2,7 +2,7 @@
 
 
 
-### - [ ] Fund Me
+### Fund Me
 #### Dependencies, Deploying, and Networks
 - Contract verification
 - Deploy to Rinkeby
@@ -19,4 +19,5 @@
 - brownie exceptions
 - brownie ganache vs local ganache vs mainnet-fork vs testnet
 
+---
 ### Smart Contract Lottery
