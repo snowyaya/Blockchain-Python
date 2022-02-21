@@ -2,7 +2,7 @@
 
 
 
-### -[ ] Fund Me
+### - [ ] Fund Me
 #### Dependencies, Deploying, and Networks
 - Contract verification
 - Deploy to Rinkeby
