@@ -1,0 +1,3 @@
+dotenv: .env # tell the program to grab the variables from .env when run scripts
+wallets:
+  from_key: ${PRIVATE_KEY}  

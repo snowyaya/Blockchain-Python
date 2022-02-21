@@ -46,12 +46,16 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 # print(abi)
 
 # for connecting to gagache
-w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:8545"))
-# 5777 wouldn't work
-chain_id = 1337
-my_address = "0x830986028f4238aeF0687B4268E4a4EB865866aB"
-# Private_Key should start with 0x
-private_key = "0x408fc123497028a48897da8153485427d4fbbe1209e442fcce89ffb9e7b634a2"
+w3 = Web3(
+    Web3.HTTPProvider("https://rinkeby.infura.io/v3/43f15fb8c8bd4df0a2e8a8eb62a15b80")
+)
+# 5777 wouldn't work, use 1337 for ganache-cli
+# Rinkby chain_id is 4
+chain_id = 4
+# Rinkby address from Metamask
+my_address = "0x2B9D7A8d700d15Dd60F866B701187074B4EE6aC9"
+# Private_Key should start with 0x in .env
+private_key = os.getenv("PRIVATE_KEY")
 
 # Create the contract in python
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
