@@ -1,5 +1,6 @@
 # Blockchain-Python
 
+<br>
 ### Fund Me
 #### Dependencies, Deploying, and Networks
 - Contract verification
@@ -17,4 +18,5 @@
 - brownie exceptions
 - brownie ganache vs local ganache vs mainnet-fork vs testnet
 
+<br>
 ### Smart Contract Lottery
