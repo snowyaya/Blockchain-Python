@@ -1,5 +1,11 @@
 # Blockchain-Python
 
+Course: [Solidity, Blockchain, and Smart Contract](https://youtu.be/M576WGiDBdQ)
+Instructor: Patrick Collins
+
+This repo contains the blockchain project I have done.
+Date started: Feb 14, 2022
+Date ended: TBD
 
 ---
 ### Fund Me
