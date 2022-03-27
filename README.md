@@ -1,13 +1,14 @@
 # Blockchain-Python
+This repe contains the Python blockchain projects I have worked on.
 
-## 👉 Fund Me
+### Fund Me ✅ 
 #### Dependencies, Deploying, and Networks
 - Contract verification
 - Deploy to Rinkeby
 - Deploy to local chain
 - Adding a persistent brownie network
 
-#### Funding and Withdrawing Python Scripts
+#### Funding and Withdrawing Python Scripts 
 - Fund Script
 - Withdraw Script
 
@@ -18,15 +19,15 @@
 - brownie ganache vs local ganache vs mainnet-fork vs testnet
 
 ---
-## 👉 Smart Contract Lottery
+### 👉 Smart Contract Lottery ✅ 
 
 Anyone can enter the lottery and a random winner is selcted.
 
 ---
-## 👉 NFTs
+### 👉 NFTs ✅ 
 
 ---
-## 👉 Full-Stack DeFi
+### 👉 Full-Stack DeFi 🔆
 
 <details> 
 Course: [Solidity, Blockchain, and Smart Contract](https://youtu.be/M576WGiDBdQ)
