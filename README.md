@@ -1,6 +1,8 @@
 # Blockchain-Python
 This repe contains the Python blockchain projects I have worked on.
 
+---
+
 ### Fund Me ✅ 
 #### Dependencies, Deploying, and Networks
 - Contract verification
