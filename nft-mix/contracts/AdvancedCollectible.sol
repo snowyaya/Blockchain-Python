@@ -20,6 +20,8 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
     }
     mapping(uint256 => Breed) public tokenIdToBreed;
     mapping(bytes32 => address) public requestIdToSender;
+
+    // create the event
     event requestedCollectible(bytes32 indexed requestId, address requester);
     event breedAssigned(uint256 indexed tokenId, Breed breed);
 
@@ -41,6 +43,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
     function createCollectible() public returns (bytes32) {
         bytes32 requestId = requestRandomness(keyhash, fee);
         requestIdToSender[requestId] = msg.sender;
+        // emit the event
         emit requestedCollectible(requestId, msg.sender);
     }
 
@@ -51,6 +54,8 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         Breed breed = Breed(randomNumber % 3);
         uint256 newTokenId = tokenCounter;
         tokenIdToBreed[newTokenId] = breed;
+
+        // emit the breed
         emit breedAssigned(newTokenId, breed);
         address owner = requestIdToSender[requestId]; // get the original caller
         _safeMint(owner, newTokenId); // mint the nft to new tokenId
@@ -59,8 +64,10 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
 
     // set the tokenURI based on the breed of the dog
     // can be more decentralized
+    // Now we already have the on-chain metadata, we'll reciprocate that with off-chain metadata
     function setTokenURI(uint256 tokenId, string memory _tokenURI) public {
         // pug, shiba inu, st bernard
+        // check the owner of that tokenId
         require(
             _isApprovedOrOwner(_msgSender(), tokenId),
             "ERC721: caller is not owner no approved"
