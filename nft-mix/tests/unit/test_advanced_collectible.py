@@ -6,7 +6,7 @@ from scripts.helper_scripts import (
     get_account,
     get_breed,
 )
-from scripts.advanced_collectible.deploy_and_create import deploy_and_create
+from scripts.advanced_collectible.deploy_advanced import deploy_and_create
 
 
 def test_can_create_advanced_collectible():

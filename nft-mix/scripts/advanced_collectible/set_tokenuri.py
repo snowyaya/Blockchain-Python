@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from brownie import SimpleCollectible, AdvancedCollectible, accounts, network, config
 from metadata import sample_metadata
-from scripts.helpful_scripts import get_breed, OPENSEA_FORMAT
+from scripts.helper_scripts import get_breed, OPENSEA_FORMAT
 
 
 dog_metadata_dic = {
