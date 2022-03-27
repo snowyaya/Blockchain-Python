@@ -1,19 +1,19 @@
 #!/usr/bin/python3
 from brownie import SimpleCollectible, AdvancedCollectible, accounts, network, config
 from metadata import sample_metadata
-from scripts.helper_scripts import get_breed, OPENSEA_FORMAT
+from scripts.helper_scripts import get_breed, OPENSEA_URL
 
 
 dog_metadata_dic = {
-    "PUG": "ipfs://Qmd9MCGtdVz2miNumBHDbvj8bigSgTwnr4SbyH6DNnpWdt?filename=0-PUG.json",
-    "SHIBA_INU": "ipfs://QmdryoExpgEQQQgJPoruwGJyZmz6SqV4FRTX1i73CT3iXn?filename=1-SHIBA_INU.json",
-    "ST_BERNARD": "ipfs://QmbBnUjyHHN7Ytq9xDsYF9sucZdDJLRkWz7vnZfrjMXMxs?filename=2-ST_BERNARD.json",
+    "PUG": "https://ipfs.io/ipfs/Qmd9MCGtdVz2miNumBHDbvj8bigSgTwnr4SbyH6DNnpWdt?filename=0-PUG.json",
+    "SHIBA_INU": "https://ipfs.io/ipfs/QmdryoExpgEQQQgJPoruwGJyZmz6SqV4FRTX1i73CT3iXn?filename=1-SHIBA_INU.json",
+    "ST_BERNARD": "https://ipfs.io/ipfs/QmbBnUjyHHN7Ytq9xDsYF9sucZdDJLRkWz7vnZfrjMXMxs?filename=2-ST_BERNARD.json",
 }
 
 
 def main():
     print("Working on " + network.show_active())
-    advanced_collectible = AdvancedCollectible[len(AdvancedCollectible) - 1]
+    advanced_collectible = AdvancedCollectible[-1]
     number_of_advanced_collectibles = advanced_collectible.tokenCounter()
     print(
         "The number of tokens you've deployed is: "
@@ -30,10 +30,11 @@ def main():
 
 def set_tokenURI(token_id, nft_contract, tokenURI):
     dev = accounts.add(config["wallets"]["from_key"])
-    nft_contract.setTokenURI(token_id, tokenURI, {"from": dev})
+    tx = nft_contract.setTokenURI(token_id, tokenURI, {"from": dev})
+    tx.wait(1)
     print(
         "Awesome! You can view your NFT at {}".format(
-            OPENSEA_FORMAT.format(nft_contract.address, token_id)
+            OPENSEA_URL.format(nft_contract.address, token_id)
         )
     )
     print('Please give up to 20 minutes, and hit the "refresh metadata" button')

@@ -1,4 +1,9 @@
-from scripts.helper_scripts import get_account, OPENSEA_URL, get_contract
+from scripts.helper_scripts import (
+    get_account,
+    OPENSEA_URL,
+    get_contract,
+    fund_with_link,
+)
 from brownie import AdvancedCollectible, network, config
 
 sample_token_uri = "https://ipfs.io/ipfs/Qmd9MCGtdVz2miNumBHDbvj8bigSgTwnr4SbyH6DNnpWdt?filename=0-PUG.json"

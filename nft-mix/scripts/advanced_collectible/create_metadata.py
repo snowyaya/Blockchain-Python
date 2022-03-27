@@ -1,3 +1,6 @@
+# read off-chain and create metadata
+
+
 #!/usr/bin/python3
 import os
 import requests
@@ -11,15 +14,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 breed_to_image_uri = {
-    "PUG": "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png",
-    "SHIBA_INU": "ipfs://QmYx6GsYAKnNzZ9A6NvEKV9nf1VaDzJrqDR23Y8YSkebLU?filename=shiba-inu.png",
-    "ST_BERNARD": "ipfs://QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW?filename=st-bernard.png",
+    "PUG": "https://ipfs.io/ipfs/QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png",
+    "SHIBA_INU": "https://ipfs.io/ipfs/QmYx6GsYAKnNzZ9A6NvEKV9nf1VaDzJrqDR23Y8YSkebLU?filename=shiba-inu.png",
+    "ST_BERNARD": "https://ipfs.io/ipfs/QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW?filename=st-bernard.png",
 }
 
 
 def main():
     print("Working on " + network.show_active())
-    advanced_collectible = AdvancedCollectible[len(AdvancedCollectible) - 1]
+    advanced_collectible = AdvancedCollectible[-1]
     number_of_advanced_collectibles = advanced_collectible.tokenCounter()
     print(
         "The number of tokens you've deployed is: "
@@ -51,6 +54,7 @@ def write_metadata(token_ids, nft_contract):
             collectible_metadata["description"] = "An adorable {} pup!".format(
                 collectible_metadata["name"]
             )
+            # get the image uri
             image_to_upload = None
             if os.getenv("UPLOAD_IPFS") == "true":
                 image_path = "./img/{}.png".format(breed.lower().replace("_", "-"))
@@ -74,8 +78,10 @@ def upload_to_ipfs(filepath):
         ipfs_url = (
             os.getenv("IPFS_URL") if os.getenv("IPFS_URL") else "http://localhost:5001"
         )
+        # make an api call
         response = requests.post(ipfs_url + "/api/v0/add", files={"file": image_binary})
         ipfs_hash = response.json()["Hash"]
+        # "./img/PUG.png" -> "PUG.png"
         filename = filepath.split("/")[-1:][0]
         image_uri = "ipfs://{}?filename={}".format(ipfs_hash, filename)
         print(image_uri)
