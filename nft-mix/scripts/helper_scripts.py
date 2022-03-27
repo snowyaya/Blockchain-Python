@@ -1,4 +1,4 @@
-from brownie import accounts, network, config, LinkToken, VRFCoordinatorMock, Contract
+from brownie import accounts, network, config, LinkToken, VRFCoordinator, Contract
 from os import link
 from web3 import Web3
 
@@ -21,7 +21,7 @@ def get_account(index=None, id=None):
     return accounts.add(config["wallets"]["from_key"])
 
 
-contract_to_mock = {"link_token": LinkToken, "vrf_coordinator": VRFCoordinatorMock}
+contract_to_mock = {"link_token": LinkToken, "vrf_coordinator": VRFCoordinator}
 
 
 def get_contract(contract_name):
@@ -65,7 +65,7 @@ def deploy_mocks():
     link_token = LinkToken.deploy({"from": account})
     print(f"Link Token deployed to {link_token.address}")
     print("Deploying Mock VRF Coordinator...")
-    vrf_coordinator = VRFCoordinatorMock.deploy(link_token.address, {"from": account})
+    vrf_coordinator = VRFCoordinator.deploy(link_token.address, {"from": account})
     print(f"VRFCoordinator deployed to {vrf_coordinator.address}")
     print("All done!")
 
