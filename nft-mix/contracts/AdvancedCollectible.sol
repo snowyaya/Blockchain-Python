@@ -57,6 +57,8 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         tokenCounter = tokenCounter + 1;
     }
 
+    // set the tokenURI based on the breed of the dog
+    // can be more decentralized
     function setTokenURI(uint256 tokenId, string memory _tokenURI) public {
         // pug, shiba inu, st bernard
         require(
