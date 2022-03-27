@@ -1,5 +1,6 @@
 # Blockchain-Python
 
+<details> Backgroud
 Course: [Solidity, Blockchain, and Smart Contract](https://youtu.be/M576WGiDBdQ)
 
 Instructor: Patrick Collins
@@ -9,7 +10,7 @@ This repo contains the blockchain project I have done.
 Date started: Feb 14, 2022
 
 Date ended: TBD
-
+</details>
 ---
 ## 👉 Fund Me
 #### Dependencies, Deploying, and Networks
@@ -33,14 +34,8 @@ Date ended: TBD
 
 Anyone can enter the lottery and a random winner is selcted.
 
-## 👉 Chainlink Mix
-
-## 👉 ERC20s, EIPs, and Token Standards
-
-## 👉 DeFi & Aave
-
+---
 ## 👉 NFTs
 
-## 👉 Updrading Smart Contracts
-
+---
 ## 👉 Full-Stack DeFi
